@@ -1,15 +1,12 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
+import { fetchCountries } from './fetchCountries';
 
 
-const BASE_URL = 'https://restcountries.com/v3.1'
+
 const DEBOUNCE_DELAY = 300;
 
-function fetchCountryByName (countryName) {
-  const url = `${BASE_URL}/name/${countryName}`
-  return fetch(url).then(response =>  response.json())
-}
 
  
  const refs = {
@@ -23,9 +20,9 @@ function fetchCountryByName (countryName) {
 refs.input.addEventListener('input', debounce(countryName,DEBOUNCE_DELAY))
 
 function countryName (e) {
-  const countryToFind = e.target.value;
-
-  fetchCountryByName(countryToFind)
+  const countryToFind = e.target.value.trim();
+  console.log(countryToFind) 
+  fetchCountries(countryToFind)
     .then(r => {
       refs.countryInfo.innerHTML = ''
       refs.list.innerHTML = ''
