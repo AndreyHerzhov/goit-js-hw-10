@@ -18,3 +18,23 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+
+.conatainer {
+  padding: 15px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.flag{
+  width: 15px;
+  height: 8px;
+}
+
+.country{
+  margin-left: 10px;
+  font-size: 24px;
+}
