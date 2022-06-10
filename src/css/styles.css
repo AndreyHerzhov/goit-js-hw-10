@@ -30,11 +30,14 @@ body {
 }
 
 .flag{
+  display: inline;
   width: 15px;
   height: 8px;
+  margin-right: 10px;
 }
 
+
 .country{
-  margin-left: 10px;
+ 
   font-size: 24px;
 }
